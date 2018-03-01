@@ -23,5 +23,8 @@ public class CommoFunctions {
 		// FileUtils.copyFile(image, new
 		// File("./Screenshots/"+imgName+".jpeg"));
 
-	}
+}
+	
+
+}
 

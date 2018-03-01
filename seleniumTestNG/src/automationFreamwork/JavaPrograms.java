@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 
 public class JavaPrograms {
+	
+	
 
 	public static void findLetterNumberSpecial() {
 		String check = "1a2%$*()bc";
@@ -83,8 +85,9 @@ public class JavaPrograms {
 	lis.add("kumar");
 		
 		for(String s:lis){
-			
-			j= j+lis;			
+			int i =0;
+			j= j+s;			
+			i++;
 		}
 		System.out.println(j);
 		
@@ -111,7 +114,22 @@ public class JavaPrograms {
 		}
 		
 	}
-	
+	public static  void swapnumber(){
+		
+		int x = 50;
+		int y = 60;
+		System.out.println("x:is"+ x);
+		System.out.println("y:is"+y );
+		
+		x=x+y;
+		y=x-y;
+		x=x-y;
+		
+		System.out.println("x:is"+ x);
+		System.out.println("y:is"+y );
+		
+		
+	}
 	
 	public static void main(String[] args) {
 		//findLetterNumberSpecial();
@@ -119,7 +137,8 @@ public class JavaPrograms {
 		//Substrings();
 		//vowles();
 		//arraylists();
-		setlist();
+		//setlist();
+		swapnumber();
 	}
 }
 
