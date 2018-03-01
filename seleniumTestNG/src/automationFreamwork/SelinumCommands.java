@@ -1,5 +1,6 @@
 package automationFreamwork;
 
+import java.awt.Desktop.Action;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -18,15 +19,21 @@ import java.util.concurrent.TimeUnit;
 
 
 
+
+
+
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -37,7 +44,7 @@ import automationFreamwork.Login_TC;
 
 
 public class SelinumCommands {
-  FirefoxDriver driver = new FirefoxDriver();
+  static FirefoxDriver driver = new FirefoxDriver();
 	
 	@BeforeMethod
 public void beforeall() throws Exception {
@@ -66,7 +73,7 @@ public void drangAndDrop() throws Exception{
 		WebElement to = driver.findElement(By.id("droppable"));	
 		Actions builder = new Actions(driver);
 		Thread.sleep(5000);
-		Action dragAndDrop = builder.clickAndHold(from).moveToElement(to).release().build();
+		org.openqa.selenium.interactions.Action dragAndDrop = builder.clickAndHold(from).moveToElement(to).release().build();
 		dragAndDrop.perform();
 	}
 	 @Test
@@ -146,8 +153,7 @@ public void multipleWindows(){
     String parent = driver.getWindowHandle();
 	
 	driver.findElement(By.name("New Message Window")).click();
-	
- 
+
      
      Set<String> multiwin = driver.getWindowHandles();
      
@@ -155,6 +161,43 @@ public void multipleWindows(){
      
      driver.switchTo().window(parent);
 
+}
+public static void openInnextab(){
+	
+		driver.get("https://www.javatpoint.com/collections-in-java");
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		
+		Actions action = new Actions(driver);
+		Actions openNewInNewTab = action.contextClick(driver.findElement(By.xpath(".//a[@href='java-arraylist']"))).sendKeys("t");
+		
+		openNewInNewTab.build().perform();
+		
+}
+
+public static void switchBetweenTabs() throws InterruptedException{
+	
+		driver.get("https://www.javatpoint.com/collections-in-java");
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		
+		Actions action = new Actions(driver);
+		Actions openNewInNewTab = action.contextClick(driver.findElement(By.xpath(".//a[@href='java-arraylist']"))).sendKeys("t");
+		openNewInNewTab.build().perform();
+		Thread.sleep(2000);
+	   
+		//move right
+		Actions switchtab = action.keyDown(Keys.CONTROL).sendKeys(Keys.PAGE_DOWN).keyUp(Keys.CONTROL);
+	   switchtab.build().perform();
+	   
+	   Thread.sleep(2000);
+	
+	   //   move left
+		
+	   Actions switchtab1 = action.keyDown(Keys.CONTROL).sendKeys(Keys.PAGE_UP).keyUp(Keys.CONTROL);  
+	   switchtab1.build().perform();
+	   
+	   
 }
 public  void findNoselectedCheckBox(){
 	int count = 0;

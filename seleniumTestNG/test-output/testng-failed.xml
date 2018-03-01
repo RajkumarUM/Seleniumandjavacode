@@ -5,7 +5,7 @@
     <classes>
       <class name="automationFreamwork.CreateEmployee_TC">
         <methods>
-          <include name="findNoselectCheckBox"/>
+          <include name="switchBetweenTabs"/>
         </methods>
       </class> <!-- automationFreamwork.CreateEmployee_TC -->
     </classes>
