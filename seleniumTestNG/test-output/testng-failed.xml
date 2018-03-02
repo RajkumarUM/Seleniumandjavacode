@@ -5,7 +5,7 @@
     <classes>
       <class name="automationFreamwork.CreateEmployee_TC">
         <methods>
-          <include name="switchBetweenTabs"/>
+          <include name="readfromExcel"/>
         </methods>
       </class> <!-- automationFreamwork.CreateEmployee_TC -->
     </classes>
