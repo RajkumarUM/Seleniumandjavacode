@@ -1,10 +1,18 @@
 package automationFreamwork;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbookType;
 
 public class JavaPrograms {
 	
@@ -97,7 +105,7 @@ public class JavaPrograms {
 		}
 	}
 	
-	public static void setlist(){
+	public static void set(){
 		
 		Set<String> lis = new HashSet<String>();
 		
@@ -130,15 +138,20 @@ public class JavaPrograms {
 		
 		
 	}
-	
-	public static void main(String[] args) {
-		//findLetterNumberSpecial();
-		//reverseString();
-		//Substrings();
-		//vowles();
-		//arraylists();
-		//setlist();
+
+	public static void main(String[] args) throws IOException {
+		findLetterNumberSpecial();
+		reverseString();
+		Substrings();
+		vowles();
+		arraylists();
+		set();
 		swapnumber();
+		
 	}
+	
+	
+	
+	
 }
 
