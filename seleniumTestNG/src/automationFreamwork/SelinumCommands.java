@@ -9,28 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import org.apache.commons.io.FileUtils;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -68,7 +47,7 @@ public void beforeall() throws Exception {
 		
   }
 	
-@Test
+@Test(priority=1)
 public void drangAndDrop() throws Exception{
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//a[@href='droppable.php']/figure")).click();
@@ -301,7 +280,7 @@ public void execueFailedTest(ITestResult result) throws IOException{
 
 public void allMethods() throws Exception{
 	findNoselectedCheckBox();
-	execueFailedTest();
+	//execueFailedTest();
 	
 	
 	drangAndDrop();
