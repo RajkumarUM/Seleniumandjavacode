@@ -52,6 +52,30 @@ public class JavaPrograms {
 		
 		System.out.print(reverse);
 	}
+	public static void reverseSelectedOnly(){
+		
+		String sour= "rajkumar";
+		String iden ="";
+		String reversed="";
+		for(int i =0;i<sour.length();i++){
+			
+			String cap = sour.charAt(i)+"";
+			
+			if(cap.matches("[kum]+")){
+				
+				iden+=cap;
+			}
+			}
+		for(int j=iden.length()-1;j>=0;j--){
+		
+		char c =  iden.charAt(j);
+		
+		reversed = reversed + c;
+		}
+	System.out.println(reversed);
+	
+	}
+	
 
 	public static void Substrings(){
 		
@@ -140,14 +164,14 @@ public class JavaPrograms {
 	}
 
 	public static void main(String[] args) throws IOException {
-		findLetterNumberSpecial();
-		reverseString();
-		Substrings();
-		vowles();
-		arraylists();
-		set();
-		swapnumber();
-		
+		//findLetterNumberSpecial();
+		//reverseString();
+		//Substrings();
+		//vowles();
+		//arraylists();
+		//set();
+		//swapnumber();
+		reverseSelectedOnly();
 	}
 	
 	
